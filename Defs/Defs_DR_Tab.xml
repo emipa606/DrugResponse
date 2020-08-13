@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <MainButtonDef>
+    <defName>DrugResponse</defName>
+    <label>Drug Response</label>
+    <description>Colonist AI controls to administer drugs</description>
+    <tabWindowClass>MSPainless.MainTabWindow_DrugResponse</tabWindowClass>
+    <order>100</order>
+    <minimized>True</minimized>
+    <iconPath>UI/Buttons/DrugResponse</iconPath>
+  </MainButtonDef>
+</Defs>

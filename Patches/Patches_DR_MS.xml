@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- ====== Compatability Patch ==================== -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medical Supplements</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>/Defs/ThingDef[defName="MSMetasis" or defName="MSAspirin" 
+						or defName="MSRimCodamol" or defName="MSMorphine" or defName="MSOpiumPipe" or defName="MSRimcetamol"]</xpath>
+          <value>
+            <li Class="MSPainless.MSPainDrug">
+              <ManagesPain>true</ManagesPain>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

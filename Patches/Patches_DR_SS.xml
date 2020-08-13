@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- ====== Compatability Patch ==================== -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Social Supplements</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <success>Always</success>
+      <operations>
+        <li Class="PatchOperationAddModExtension">
+          <xpath>/Defs/ThingDef[defName="SSVape_Regular" or defName="SSVape_Fruity" or defName="SSVape_Menthol"]</xpath>
+          <value>
+            <li Class="MSPainless.MSPainDrug">
+              <ManagesPain>true</ManagesPain>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

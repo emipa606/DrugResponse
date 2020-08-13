@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--  MSPainless -->
+  <MSPainless.Name>Drug Response</MSPainless.Name>
+  <MSPainless.Warning>Warning: Game not loaded, will assume research completed.</MSPainless.Warning>
+  <MSPainless.UseNonMedical>Use Non-medical drugs</MSPainless.UseNonMedical>
+  <MSPainless.ShowResearched>Only show researched drugs</MSPainless.ShowResearched>
+  <MSPainless.BillsHighPain>Always use bills for high pain</MSPainless.BillsHighPain>
+  <MSPainless.DoIfImmune>Respond when full immunity reached</MSPainless.DoIfImmune>
+  <MSPainless.DoForPrisoners>Apply pain responses to colony prisoners</MSPainless.DoForPrisoners>
+  <MSPainless.DoDRForPrisoners>Apply malady responses to colony prisoners</MSPainless.DoDRForPrisoners>
+  <MSPainless.UsePainManagement>Use pain relief AI</MSPainless.UsePainManagement>
+  <MSPainless.PainReliefWaitPeriod>Pain relief waiting period (hrs)</MSPainless.PainReliefWaitPeriod>
+  <MSPainless.ShowReliefMsg>Show pain relief notifications</MSPainless.ShowReliefMsg>
+  <MSPainless.MethodRelief>Do pain relief using surgery bills</MSPainless.MethodRelief>
+  <MSPainless.UseDrugResponse>Use malady response AI</MSPainless.UseDrugResponse>
+  <MSPainless.DRWaitPeriod>Malady response waiting period (hrs)</MSPainless.DRWaitPeriod>
+  <MSPainless.ShowResponseMsg>Show malady response notifications</MSPainless.ShowResponseMsg>
+  <MSPainless.MethodResponse>Do malady response using surgery bills</MSPainless.MethodResponse>
+  <MSPainless.WaitDays>      ({0} days)</MSPainless.WaitDays>
+  <MSPainless.None>None</MSPainless.None>
+  <MSPainless.Yes>Yes</MSPainless.Yes>
+  <MSPainless.No>No</MSPainless.No>
+  <MSPainless.DrugMild>Mild pain</MSPainless.DrugMild>
+  <MSPainless.DrugMinor>Minor pain</MSPainless.DrugMinor>
+  <MSPainless.DrugSerious>Serious pain</MSPainless.DrugSerious>
+  <MSPainless.DrugIntense>Intense pain</MSPainless.DrugIntense>
+  <MSPainless.DrugExtreme>Extreme pain</MSPainless.DrugExtreme>
+  <MSPainless.DrugMinorLevels>Pain below 15%</MSPainless.DrugMinorLevels>
+  <MSPainless.DrugSeriousLevels>Pain 15% to 39%</MSPainless.DrugSeriousLevels>
+  <MSPainless.DrugIntenseLevels>Pain 40% to 80%</MSPainless.DrugIntenseLevels>
+  <MSPainless.DrugExtremeLevels>Pain above 80%</MSPainless.DrugExtremeLevels>
+  <MSPainless.ReliefMsg>{0} is taking pain relief with drug: {1}</MSPainless.ReliefMsg>
+  <MSPainless.ResponseMsg>{0} is responding to {1} with drug: {2}</MSPainless.ResponseMsg>
+  <MSPainless.Malady>Malady</MSPainless.Malady>
+  <MSPainless.MaladyDrug>Response</MSPainless.MaladyDrug>
+  <MSPainless.Set>Set</MSPainless.Set>
+  <MSPainless.Clear>Clear</MSPainless.Clear>
+  <MSPainless.ClearAll>Clear "ALL"</MSPainless.ClearAll>
+  <MSPainless.ErrDrugPolicy>{0}'s current drug policy does not contain an entry for {1}. Please update policy.</MSPainless.ErrDrugPolicy>
+  <MSPainless.ViolationMsg>Cannot administer drug {1} to {0}, {2}</MSPainless.ViolationMsg>
+  <MSPainless.ViolationTeetotaler>since teetotalers will not take non-medical drugs.</MSPainless.ViolationTeetotaler>
+  <MSPainless.ViolationNonPlayer>since outsiders don't like the use of non-medical drugs.</MSPainless.ViolationNonPlayer>
+
+</LanguageData>
