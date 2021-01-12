@@ -41,5 +41,4 @@
   <MSPainless.ViolationMsg>Cannot administer drug {1} to {0}, {2}</MSPainless.ViolationMsg>
   <MSPainless.ViolationTeetotaler>since teetotalers will not take non-medical drugs.</MSPainless.ViolationTeetotaler>
   <MSPainless.ViolationNonPlayer>since outsiders don't like the use of non-medical drugs.</MSPainless.ViolationNonPlayer>
-
 </LanguageData>

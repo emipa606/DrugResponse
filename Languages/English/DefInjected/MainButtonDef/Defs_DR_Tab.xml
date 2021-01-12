@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <DrugResponse.label>Drug Response</DrugResponse.label>
   <DrugResponse.description>Colonist AI controls to administer drugs</DrugResponse.description>
-
-
 </LanguageData>
