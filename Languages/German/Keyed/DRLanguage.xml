@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--  MSPainless -->
+  <MSPainless.Name>Drug Response</MSPainless.Name>
+  <MSPainless.Warning>Warning: Game not loaded, will assume research completed.</MSPainless.Warning>
+  <MSPainless.UseNonMedical>Verwende nicht medizinische Medikamente</MSPainless.UseNonMedical>
+  <MSPainless.ShowResearched>Nur erforschte Medikament anzeigen</MSPainless.ShowResearched>
+  <MSPainless.BillsHighPain>Medikamente immer bei starken Schmerzen verwenden</MSPainless.BillsHighPain>
+  <MSPainless.DoIfImmune>Fortführen bei vollständiger Immunität</MSPainless.DoIfImmune>
+  <MSPainless.DoForPrisoners>Medikamenteneinnahme bei Gefangenen übernehmen</MSPainless.DoForPrisoners>
+  <MSPainless.DoDRForPrisoners>Krankheitsbekämpfung bei Gefangenen übernehmen</MSPainless.DoDRForPrisoners>
+  <MSPainless.UsePainManagement>Verwende Schmerzlinderung-KI</MSPainless.UsePainManagement>
+  <MSPainless.PainReliefWaitPeriod>Wartezeit zur Schmerzlinderung (Std)</MSPainless.PainReliefWaitPeriod>
+  <MSPainless.ShowReliefMsg>Zeige Schmerzlinderungsnachrichten</MSPainless.ShowReliefMsg>
+  <MSPainless.MethodRelief>Schmerzlinderungsreaktion unter Operationen anzeigen</MSPainless.MethodRelief>
+  <MSPainless.UseDrugResponse>Verwende Krankheits-KI</MSPainless.UseDrugResponse>
+  <MSPainless.DRWaitPeriod>Wartezeit zur Krankheitsbekämpfung (Std)</MSPainless.DRWaitPeriod>
+  <MSPainless.ShowResponseMsg>Zeige Krankheitsbekämpfungsnachricht</MSPainless.ShowResponseMsg>
+  <MSPainless.MethodResponse>Krankheitsbekämpfung unter Operationen anzeigen</MSPainless.MethodResponse>
+  <MSPainless.WaitDays>      ({0} Tage)</MSPainless.WaitDays>
+  <MSPainless.None>Nichts</MSPainless.None>
+  <MSPainless.Yes>Ja</MSPainless.Yes>
+  <MSPainless.No>Nein</MSPainless.No>
+  <MSPainless.DrugMild>Schmerz (Leicht)</MSPainless.DrugMild>
+  <MSPainless.DrugMinor>Schmerz (Mittel)</MSPainless.DrugMinor>
+  <MSPainless.DrugSerious>Schmerz (Stark)</MSPainless.DrugSerious>
+  <MSPainless.DrugIntense>Schmerz (Intensiv)</MSPainless.DrugIntense>
+  <MSPainless.DrugExtreme>Schmerz (Extrem)</MSPainless.DrugExtreme>
+  <MSPainless.DrugMinorLevels>Schmerz: unter 15%</MSPainless.DrugMinorLevels>
+  <MSPainless.DrugSeriousLevels>Schmerz: 15% bis 39%</MSPainless.DrugSeriousLevels>
+  <MSPainless.DrugIntenseLevels>Schmerz: 40% bis 80%</MSPainless.DrugIntenseLevels>
+  <MSPainless.DrugExtremeLevels>Schmerz: über 80%</MSPainless.DrugExtremeLevels>
+  <MSPainless.ReliefMsg>{0} nimmt zur Schmerzlinderung:  {1}</MSPainless.ReliefMsg>
+  <MSPainless.ResponseMsg>{0} reagiert mit {2} auf: {1} </MSPainless.ResponseMsg>
+  <MSPainless.Malady>Krankheit</MSPainless.Malady>
+  <MSPainless.MaladyDrug>Medikament</MSPainless.MaladyDrug>
+  <MSPainless.Set>Ausw.</MSPainless.Set>
+  <MSPainless.Clear>Löschen</MSPainless.Clear>
+  <MSPainless.ClearAll>Alles löschen</MSPainless.ClearAll>
+  <MSPainless.ErrDrugPolicy>Die aktuelle Richtlinie enthält keinen Eintrag für {1}. Bitte aktualisiere die Richtlinien für {0}.</MSPainless.ErrDrugPolicy>
+  <MSPainless.ViolationMsg>Das Medikament {1} kann nicht an {0}, {2} verabreicht werden.</MSPainless.ViolationMsg>
+  <MSPainless.ViolationTeetotaler>Abstinenzler nehmen keine Medikamente.</MSPainless.ViolationTeetotaler>
+  <MSPainless.ViolationNonPlayer>Außenstehende lehnen die Verwenung von nicht-medizinischen Medikamenten ab.</MSPainless.ViolationNonPlayer>
+</LanguageData>

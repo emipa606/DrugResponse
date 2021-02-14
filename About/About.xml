@@ -23,6 +23,9 @@
 Update of peladors mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2002963487
 
+- Added support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2347448943]Medicines+[/url] Thanks Sky!
+- Added German translation, thanks Erdnussbrot
+
 [img]https://i.imgur.com/7Gzt3Rg.png[/img]
 
 [table]
@@ -32,6 +35,17 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2002963487
 	[/tr]
 [/table]
 	
+
+[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[/list]
+
 [img]https://i.imgur.com/NOW7jU1.png[/img]
 
 [h1]Overview[/h1] V1.1
@@ -100,25 +114,11 @@ Adding additional maladies (where a relevant drug exists to best respond with).
 
 Save facility.
 
-[h1]Github[/h1]
-
-https://github.com/PeladorRW/DrugResponse
-
-
 [h1]Credits[/h1]
 
 NotFood - MP Compatibility Support.
 
 
-[h1]Pelador's Discord[/h1]
-
-https://discord.gg/CFNP26C
-
-
-[h1]V1.1 Collection[/h1]
-
-https://steamcommunity.com/sharedfiles/filedetails/?id=2012817741
-
-
-(CC BY-NC-SA 4.0)</description>
+(CC BY-NC-SA 4.0)
+</description>
 </ModMetaData>
