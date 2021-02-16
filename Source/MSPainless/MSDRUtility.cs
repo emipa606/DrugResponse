@@ -52,6 +52,9 @@ namespace MSPainless
                 list.AddDistinct("CA;CA_Sinusitis");
                 list.AddDistinct("CA;CA_Minor_STD");
                 list.AddDistinct("CA;CA_Fatigue");
+                list.AddDistinct("CA;CA_Headache");
+                list.AddDistinct("CA;CA_Migraine");
+                list.AddDistinct("CA;CA_PhantomPain");
             }
 
             if (ModLister.HasActiveModWithName("Diseases Overhauled"))
