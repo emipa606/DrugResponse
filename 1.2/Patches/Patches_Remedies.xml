@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- ====== Compatability Patch with Remedies ================ -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName="FF_Painkiller"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ThingDef[defName="FF_Painkiller"]</xpath>
+      <value>
+        <li Class="MSPainless.MSPainDrug">
+          <ManagesPain>true</ManagesPain>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>
