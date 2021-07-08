@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- ====== Compatability Patch ==================== -->
+  <Operation Class="PatchOperationSequence">
+    <success>Always</success>
+    <operations>
+      <li Class="PatchOperationAddModExtension">
+        <xpath>/Defs/ThingDef[defName="SmokeleafJoint" or defName="GoJuice" or defName="PsychiteTea" or defName="Flake" or defName="Yayo" or defName="Luciferium"]</xpath>
+        <value>
+          <li Class="MSPainless.MSPainDrug">
+            <ManagesPain>true</ManagesPain>
+          </li>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

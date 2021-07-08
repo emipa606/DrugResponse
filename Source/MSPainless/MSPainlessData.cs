@@ -89,86 +89,84 @@ namespace MSPainless
                     return;
                 }
 
-                using (var enumerator = hedSet.hediffs.GetEnumerator())
+                using var enumerator = hedSet.hediffs.GetEnumerator();
+                while (enumerator.MoveNext())
                 {
-                    while (enumerator.MoveNext())
+                    var hediff = enumerator.Current;
+                    if (!hediff.Visible || IsProsthetic(hediff) || !MSDRUtility.MaladyUsed(hediff.def.defName))
                     {
-                        var hediff = enumerator.Current;
-                        if (!hediff.Visible || IsProsthetic(hediff) || !MSDRUtility.MaladyUsed(hediff.def.defName))
+                        continue;
+                    }
+
+                    for (var i = 1; i <= 2; i++)
+                    {
+                        if (!CheckIfResponse(Pawn, hediff.def.defName, DRResponse, i, out var drugdef) ||
+                            !MSDrugUtility.IsOKtoAdmin(Pawn, hediff.def, drugdef) ||
+                            MSDrugUtility.IsViolation(Pawn, drugdef))
                         {
                             continue;
                         }
 
-                        for (var i = 1; i <= 2; i++)
+                        var drug = MSDrugUtility.FindDrugFor(Pawn, drugdef);
+                        if (drug == null)
                         {
-                            if (!CheckIfResponse(Pawn, hediff.def.defName, DRResponse, i, out var drugdef) ||
-                                !MSDrugUtility.IsOKtoAdmin(Pawn, hediff.def, drugdef) ||
-                                MSDrugUtility.IsViolation(Pawn, drugdef))
-                            {
-                                continue;
-                            }
-
-                            var drug = MSDrugUtility.FindDrugFor(Pawn, drugdef);
-                            if (drug == null)
-                            {
-                                continue;
-                            }
-
-                            if (i < 2 && MSDRUtility.GetValueDRBills(hediff.def.defName, DRSettings.MSDRValues) ||
-                                i > 1 && MSDRUtility.GetValueDRBills(hediff.def.defName, DRSettings.MSDRValues2) ||
-                                Pawn.IsPrisoner && DRSettings.DoDRIfPrisoner)
-                            {
-                                if ((i >= 2 || !MSAddDrugBill.GenDrugResponse(true, Pawn, hediff.def, drugdef, null,
-                                    DRSettings.MSDRValues, i)) && (i <= 1 || !MSAddDrugBill.GenDrugResponse(true, Pawn,
-                                    hediff.def, drugdef, null, DRSettings.MSDRValues2, i)))
-                                {
-                                    continue;
-                                }
-
-                                SetDRResponseData(Pawn, hediff.def.defName, drugdef.defName, Find.TickManager.TicksGame,
-                                    DRResponse, i, out var newDRResponse);
-                                DRResponse = newDRResponse;
-                                DoDRResponseMsg(Pawn, hediff.def, drugdef);
-                            }
-                            else if (IsDRCapable(Pawn))
-                            {
-                                var job = new Job(JobDefOf.Ingest, drug)
-                                {
-                                    count = Mathf.Min(drug.stackCount, drug.def.ingestible.maxNumToIngestAtOnce, 1)
-                                };
-                                if (drug.Spawned && Pawn.drugs != null &&
-                                    !Pawn.inventory.innerContainer.Contains(drug.def))
-                                {
-                                    var drugPolicyEntry = Pawn.drugs.CurrentPolicy[drug.def];
-                                    if (drugPolicyEntry.takeToInventory > 0)
-                                    {
-                                        job.takeExtraIngestibles = drugPolicyEntry.takeToInventory;
-                                    }
-                                }
-
-                                if (Pawn.jobs?.curJob != null)
-                                {
-                                    Pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
-                                    Pawn.jobs.ClearQueuedJobs();
-                                }
-
-                                SetDRResponseData(Pawn, hediff.def.defName, drugdef.defName, Find.TickManager.TicksGame,
-                                    DRResponse, i, out var newDRResponse2);
-                                DRResponse = newDRResponse2;
-                                DoDRResponseMsg(Pawn, hediff.def, drugdef);
-                                Pawn.jobs.TryTakeOrderedJob(job);
-                            }
+                            continue;
                         }
 
-                        var jobs = Pawn.jobs;
-                        if (jobs?.curJob != null && Pawn.jobs.curJob.def == JobDefOf.Ingest)
+                        if (i < 2 && MSDRUtility.GetValueDRBills(hediff.def.defName, DRSettings.MSDRValues) ||
+                            i > 1 && MSDRUtility.GetValueDRBills(hediff.def.defName, DRSettings.MSDRValues2) ||
+                            Pawn.IsPrisoner && DRSettings.DoDRIfPrisoner)
                         {
-                            break;
+                            if ((i >= 2 || !MSAddDrugBill.GenDrugResponse(true, Pawn, hediff.def, drugdef, null,
+                                DRSettings.MSDRValues, i)) && (i <= 1 || !MSAddDrugBill.GenDrugResponse(true, Pawn,
+                                hediff.def, drugdef, null, DRSettings.MSDRValues2, i)))
+                            {
+                                continue;
+                            }
+
+                            SetDRResponseData(Pawn, hediff.def.defName, drugdef.defName, Find.TickManager.TicksGame,
+                                DRResponse, i, out var newDRResponse);
+                            DRResponse = newDRResponse;
+                            DoDRResponseMsg(Pawn, hediff.def, drugdef);
+                        }
+                        else if (IsDRCapable(Pawn))
+                        {
+                            var job = new Job(JobDefOf.Ingest, drug)
+                            {
+                                count = Mathf.Min(drug.stackCount, drug.def.ingestible.maxNumToIngestAtOnce, 1)
+                            };
+                            if (drug.Spawned && Pawn.drugs != null &&
+                                !Pawn.inventory.innerContainer.Contains(drug.def))
+                            {
+                                var drugPolicyEntry = Pawn.drugs.CurrentPolicy[drug.def];
+                                if (drugPolicyEntry.takeToInventory > 0)
+                                {
+                                    job.takeExtraIngestibles = drugPolicyEntry.takeToInventory;
+                                }
+                            }
+
+                            if (Pawn.jobs?.curJob != null)
+                            {
+                                Pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                                Pawn.jobs.ClearQueuedJobs();
+                            }
+
+                            SetDRResponseData(Pawn, hediff.def.defName, drugdef.defName, Find.TickManager.TicksGame,
+                                DRResponse, i, out var newDRResponse2);
+                            DRResponse = newDRResponse2;
+                            DoDRResponseMsg(Pawn, hediff.def, drugdef);
+                            Pawn.jobs.TryTakeOrderedJob(job);
                         }
                     }
 
-                    return;
+                    var jobs = Pawn.jobs;
+                    if (jobs?.curJob != null && Pawn.jobs.curJob.def == JobDefOf.Ingest)
+                    {
+                        break;
+                    }
                 }
+
+                return;
             }
 
             if (!Pawn.IsCaravanMember())
@@ -320,26 +318,26 @@ namespace MSPainless
             }
 
             var health = pawn.health;
-            bool flag;
+            bool b;
             if (health == null)
             {
-                flag = false;
+                b = false;
             }
             else
             {
                 var summaryHealth = health.summaryHealth;
                 if (summaryHealth == null)
                 {
-                    flag = false;
+                    b = false;
                 }
                 else
                 {
                     _ = summaryHealth.SummaryHealthPercent;
-                    flag = true;
+                    b = true;
                 }
             }
 
-            if (flag && pawn.health.summaryHealth.SummaryHealthPercent >= 0.75f)
+            if (b && pawn.health.summaryHealth.SummaryHealthPercent >= 0.75f)
             {
                 return true;
             }

@@ -50,8 +50,7 @@ namespace MSPainless
                 }
 
                 var ingestible = chkDef.ingestible;
-                var flag = ingestible?.outcomeDoers != null;
-                if (!flag)
+                if (ingestible?.outcomeDoers == null)
                 {
                     continue;
                 }
@@ -118,8 +117,7 @@ namespace MSPainless
             if (DRSettings.UseNonMedical)
             {
                 var ingestible = def.ingestible;
-                var flag = ingestible != null;
-                if (flag)
+                if (ingestible != null)
                 {
                     return true;
                 }
@@ -146,18 +144,18 @@ namespace MSPainless
                 return true;
             }
 
-            bool flag;
+            bool b;
             if (def == null)
             {
-                flag = false;
+                b = false;
             }
             else
             {
                 var recipeMaker = def.recipeMaker;
-                flag = recipeMaker?.researchPrerequisite != null;
+                b = recipeMaker?.researchPrerequisite != null;
             }
 
-            if (flag && def.recipeMaker.researchPrerequisite.IsFinished)
+            if (b && def.recipeMaker.researchPrerequisite.IsFinished)
             {
                 return true;
             }
@@ -167,37 +165,35 @@ namespace MSPainless
                 return false;
             }
 
-            using (var enumerator = recipes.GetEnumerator())
+            using var enumerator = recipes.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                while (enumerator.MoveNext())
+                var recipe = enumerator.Current;
+                if (recipe?.products == null)
                 {
-                    var recipe = enumerator.Current;
-                    if (recipe?.products == null)
+                    continue;
+                }
+
+                foreach (var thingDefCountClass in recipe.products)
+                {
+                    if (thingDefCountClass?.thingDef != def)
                     {
                         continue;
                     }
 
-                    foreach (var thingDefCountClass in recipe.products)
+                    if (recipe.researchPrerequisite == null)
                     {
-                        if (thingDefCountClass?.thingDef != def)
-                        {
-                            continue;
-                        }
+                        return true;
+                    }
 
-                        if (recipe.researchPrerequisite == null)
-                        {
-                            return true;
-                        }
-
-                        if (recipe.researchPrerequisite.IsFinished)
-                        {
-                            return true;
-                        }
+                    if (recipe.researchPrerequisite.IsFinished)
+                    {
+                        return true;
                     }
                 }
-
-                return false;
             }
+
+            return false;
         }
     }
 }

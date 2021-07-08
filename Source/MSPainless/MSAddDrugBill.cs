@@ -106,18 +106,18 @@ namespace MSPainless
         // Token: 0x06000042 RID: 66 RVA: 0x00004C04 File Offset: 0x00002E04
         private static bool ChkDuplication(Pawn pawn, RecipeDef recipedef)
         {
-            bool flag;
+            bool b;
             if (pawn == null)
             {
-                flag = false;
+                b = false;
             }
             else
             {
                 var billStack = pawn.BillStack;
-                flag = billStack?.Bills != null;
+                b = billStack?.Bills != null;
             }
 
-            if (!flag || pawn.BillStack.Bills.Count <= 0)
+            if (!b || pawn.BillStack.Bills.Count <= 0)
             {
                 return false;
             }

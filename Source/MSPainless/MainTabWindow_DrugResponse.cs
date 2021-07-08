@@ -165,14 +165,12 @@ namespace MSPainless
                 };
                 if (MSPainDrug.PainDrugs().Count > 0)
                 {
-                    using (var enumerator = MSPainDrug.PainDrugs().GetEnumerator())
+                    using var enumerator = MSPainDrug.PainDrugs().GetEnumerator();
+                    while (enumerator.MoveNext())
                     {
-                        while (enumerator.MoveNext())
-                        {
-                            var Drug = enumerator.Current;
-                            list11.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
-                                delegate { SetPainMinor(Drug.defName); }));
-                        }
+                        var Drug = enumerator.Current;
+                        list11.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
+                            delegate { SetPainMinor(Drug.defName); }));
                     }
                 }
 
@@ -203,14 +201,12 @@ namespace MSPainless
                 };
                 if (MSPainDrug.PainDrugs().Count > 0)
                 {
-                    using (var enumerator = MSPainDrug.PainDrugs().GetEnumerator())
+                    using var enumerator = MSPainDrug.PainDrugs().GetEnumerator();
+                    while (enumerator.MoveNext())
                     {
-                        while (enumerator.MoveNext())
-                        {
-                            var Drug = enumerator.Current;
-                            list12.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
-                                delegate { SetPainSerious(Drug.defName); }));
-                        }
+                        var Drug = enumerator.Current;
+                        list12.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
+                            delegate { SetPainSerious(Drug.defName); }));
                     }
                 }
 
@@ -241,14 +237,12 @@ namespace MSPainless
                 };
                 if (MSPainDrug.PainDrugs().Count > 0)
                 {
-                    using (var enumerator = MSPainDrug.PainDrugs().GetEnumerator())
+                    using var enumerator = MSPainDrug.PainDrugs().GetEnumerator();
+                    while (enumerator.MoveNext())
                     {
-                        while (enumerator.MoveNext())
-                        {
-                            var Drug = enumerator.Current;
-                            list13.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
-                                delegate { SetPainIntense(Drug.defName); }));
-                        }
+                        var Drug = enumerator.Current;
+                        list13.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
+                            delegate { SetPainIntense(Drug.defName); }));
                     }
                 }
 
@@ -279,14 +273,12 @@ namespace MSPainless
                 };
                 if (MSPainDrug.PainDrugs().Count > 0)
                 {
-                    using (var enumerator = MSPainDrug.PainDrugs().GetEnumerator())
+                    using var enumerator = MSPainDrug.PainDrugs().GetEnumerator();
+                    while (enumerator.MoveNext())
                     {
-                        while (enumerator.MoveNext())
-                        {
-                            var Drug = enumerator.Current;
-                            list14.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
-                                delegate { SetPainExtreme(Drug.defName); }));
-                        }
+                        var Drug = enumerator.Current;
+                        list14.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
+                            delegate { SetPainExtreme(Drug.defName); }));
                     }
                 }
 
@@ -311,10 +303,10 @@ namespace MSPainless
             var num = (float) DRSettings.PainReliefWaitPeriod;
             var num2 = 6f;
             var num3 = 48f;
-            var flag = false;
+            var middleAlignment = false;
             var taggedString = "MSPainless.PainReliefWaitPeriod".Translate() + " : ";
             var num4 = DRSettings.PainReliefWaitPeriod;
-            SetPRTime(Widgets.HorizontalSlider(mspainlessDrugRect, num, num2, num3, flag,
+            SetPRTime(Widgets.HorizontalSlider(mspainlessDrugRect, num, num2, num3, middleAlignment,
                 taggedString + num4.ToString() +
                 "MSPainless.WaitDays".Translate(ConvertToDaysDesc(DRSettings.PainReliefWaitPeriod)), null, null, 0f));
             posX = 0f;
@@ -391,14 +383,12 @@ namespace MSPainless
                 };
                 if (MSDRUtility.MaladyDrugs().Count > 0)
                 {
-                    using (var enumerator = MSDRUtility.MaladyDrugs().GetEnumerator())
+                    using var enumerator = MSDRUtility.MaladyDrugs().GetEnumerator();
+                    while (enumerator.MoveNext())
                     {
-                        while (enumerator.MoveNext())
-                        {
-                            var drug = enumerator.Current;
-                            list17.Add(new FloatMenuOption(drug.label.CapitalizeFirst(),
-                                delegate { SetMaladyDrug(drug.defName, 1); }));
-                        }
+                        var drug = enumerator.Current;
+                        list17.Add(new FloatMenuOption(drug.label.CapitalizeFirst(),
+                            delegate { SetMaladyDrug(drug.defName, 1); }));
                     }
                 }
 
@@ -452,10 +442,10 @@ namespace MSPainless
             var num5 = (float) DRSettings.DRWaitPeriod;
             var num6 = 6f;
             var num7 = 120f;
-            var flag2 = false;
+            var alignment = false;
             var taggedString2 = "MSPainless.DRWaitPeriod".Translate() + " : ";
             num4 = DRSettings.DRWaitPeriod;
-            SetDRTime(Widgets.HorizontalSlider(mspainlessDrugRect2, num5, num6, num7, flag2,
+            SetDRTime(Widgets.HorizontalSlider(mspainlessDrugRect2, num5, num6, num7, alignment,
                 taggedString2 + num4.ToString() +
                 "MSPainless.WaitDays".Translate(ConvertToDaysDesc(DRSettings.DRWaitPeriod)), null, null, 0f));
             posX = 0f;
@@ -531,14 +521,12 @@ namespace MSPainless
                 };
                 if (MSDRUtility.MaladyDrugs().Count > 0)
                 {
-                    using (var enumerator = MSDRUtility.MaladyDrugs().GetEnumerator())
+                    using var enumerator = MSDRUtility.MaladyDrugs().GetEnumerator();
+                    while (enumerator.MoveNext())
                     {
-                        while (enumerator.MoveNext())
-                        {
-                            var drug = enumerator.Current;
-                            list22.Add(new FloatMenuOption(drug.label.CapitalizeFirst(),
-                                delegate { SetMaladyDrug(drug.defName, 2); }));
-                        }
+                        var drug = enumerator.Current;
+                        list22.Add(new FloatMenuOption(drug.label.CapitalizeFirst(),
+                            delegate { SetMaladyDrug(drug.defName, 2); }));
                     }
                 }
 
@@ -592,10 +580,10 @@ namespace MSPainless
             var num8 = (float) DRSettings.DRWaitPeriod2;
             var num9 = 6f;
             var num10 = 120f;
-            var flag3 = false;
+            var b = false;
             var taggedString3 = "MSPainless.DRWaitPeriod".Translate() + " : ";
             num4 = DRSettings.DRWaitPeriod2;
-            SetDRTime2(Widgets.HorizontalSlider(mspainlessDrugRect3, num8, num9, num10, flag3,
+            SetDRTime2(Widgets.HorizontalSlider(mspainlessDrugRect3, num8, num9, num10, b,
                 taggedString3 + num4.ToString() +
                 "MSPainless.WaitDays".Translate(ConvertToDaysDesc(DRSettings.DRWaitPeriod2)), null, null, 0f));
             posX = 0f;
