@@ -1,6 +1,6 @@
 # DrugResponse
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of peladors mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2002963487
@@ -9,20 +9,12 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2002963487
 - Added German translation, thanks Erdnussbrot
 - Made the menu-icon fit in better
 - Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2466826996]Remedies Thanks Arcanant!
+- For detailed description, download the https://github.com/emipa606/DrugResponse/raw/main/Source/DrugResponseNotes.pdf]PDF
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
-
-[table]
-	[tr]
-		[td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
-[/td]
-		[td]https://github.com/emipa606/DrugResponse]![Image](https://i.imgur.com/kTkpTOE.png)
-[/td]
-	[/tr]
-[/table]
 	
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 
 # Overview
@@ -46,11 +38,11 @@ Note the features added in this mod are intended to embellish the existing vanil
 
 This problem now solved with the mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2000335507]Drug Policy Fix
 
-(Hopefully it goes without saying that if a drug isn&apos;t accessible to the colonist on their map then a response will not be attempted/triggered.)
+(Hopefully it goes without saying that if a drug isn't accessible to the colonist on their map then a response will not be attempted/triggered.)
 
 Pawns will also respond to taking drugs for illnesses (where set) on caravans. But this requires the caravan to also have the appropriate drug for the response.
 
-It also works alongside Pharmacy mod which addresses the priority of medicine used in tends, this mod introduces &quot;additional&quot; drug use to the tend process (if relevant) and does not effect tends themselves. 
+It also works alongside Pharmacy mod which addresses the priority of medicine used in tends, this mod introduces "additional" drug use to the tend process (if relevant) and does not effect tends themselves. 
 
 Though where maladies normally require tends any drug response would be best performed as surgery bills instead of tasks in the settings, though either option has capabilities. The bill process sometimes the better option where a malady has the potential to incapacitate the colonist or would normally require tending anyhow.
 
@@ -68,7 +60,7 @@ Applicable to **Humanlike** races that have the **organic standard** Hediff give
 # Mod Compatibility
  *** subject to conversion ***
 
-Fairly open to &quot;all&quot; drug mods, with some additional patching required to identify purposeful pain relief drugs. This has been identified in the notes above for how mod developers can apply native support.
+Fairly open to "all" drug mods, with some additional patching required to identify purposeful pain relief drugs. This has been identified in the notes above for how mod developers can apply native support.
 
 The following mods (in addition to vanilla) have however been patched:
 
@@ -82,7 +74,7 @@ Smokeleaf Industry - Reborn
 Social Supplements
 Vegetable Garden Medicine
 
-In addition, where the V1.1 &quot;Common Ailments&quot; or &quot;Diseases Overhauled&quot; mod is loaded then certain additional maladies are added for use.
+In addition, where the V1.1 "Common Ailments" or "Diseases Overhauled" mod is loaded then certain additional maladies are added for use.
 
 The Tenants mod has a harmony mod patch fix that can be found here: (*** awaiting Tenants V1.1 ***).
 
@@ -104,7 +96,7 @@ NotFood - MP Compatibility Support.
 
 (CC BY-NC-SA 4.0)
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
@@ -114,5 +106,6 @@ NotFood - MP Compatibility Support.
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 

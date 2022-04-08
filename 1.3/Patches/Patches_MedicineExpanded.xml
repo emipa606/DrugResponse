@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- ====== Medicine Expanded ==================== -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName="Acetamol"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ThingDef[defName="Acetamol" or defName="Opimol" or defName="Vicomol" or defName="Oxymol"]</xpath>
+      <value>
+        <li Class="MSPainless.MSPainDrug">
+          <ManagesPain>true</ManagesPain>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>
