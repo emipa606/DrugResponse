@@ -9,6 +9,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2002963487
 - Added German translation, thanks Erdnussbrot
 - Made the menu-icon fit in better
 - Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2466826996]Remedies Thanks Arcanant!
+- Added patch for https://steamcommunity.com/sharedfiles/filedetails/?id=2049984501]Medicine Expanded, thanks ThatBartGuy!
 - For detailed description, download the https://github.com/emipa606/DrugResponse/raw/main/Source/DrugResponseNotes.pdf]PDF
 
 ![Image](https://i.imgur.com/pufA0kM.png)
