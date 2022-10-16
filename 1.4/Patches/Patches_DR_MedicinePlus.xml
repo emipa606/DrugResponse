@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- ====== Compatability Patch with Medicines+ ==================== -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName="PoppyLatex"]</xpath>
+    <success>Always</success>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ThingDef[defName="PoppyLatex" or defName="SSalts" or defName="ThornWeedNeedle" or defName="Upper" or defName="ThornWeedExtract" or defName="Morphine" or defName="Heroin"]</xpath>
+      <value>
+        <li Class="MSPainless.MSPainDrug">
+          <ManagesPain>true</ManagesPain>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

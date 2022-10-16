@@ -57,27 +57,19 @@ public static class MSPainUtility
     private static int GetPainState(Pawn pawn)
     {
         var painTotal = GetPainAmount(pawn);
-        if (painTotal < 0.01f)
+        switch (painTotal)
         {
-            return 0;
+            case < 0.01f:
+                return 0;
+            case < 0.15f:
+                return 1;
+            case < 0.4f:
+                return 2;
+            case < 0.8f:
+                return 3;
+            default:
+                return 4;
         }
-
-        if (painTotal < 0.15f)
-        {
-            return 1;
-        }
-
-        if (painTotal < 0.4f)
-        {
-            return 2;
-        }
-
-        if (painTotal < 0.8f)
-        {
-            return 3;
-        }
-
-        return 4;
     }
 
     public static bool IsInPain(Pawn pawn)

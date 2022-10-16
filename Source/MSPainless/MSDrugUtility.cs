@@ -160,12 +160,7 @@ public class MSDrugUtility
             }
         }
 
-        if (toohighsev)
-        {
-            return false;
-        }
-
-        return true;
+        return !toohighsev;
     }
 
     private static bool DPExists(DrugPolicy policy, ThingDef drugDef)
@@ -226,17 +221,7 @@ public class MSDrugUtility
             return false;
         }
 
-        if (!pawn.CanReserve(drug))
-        {
-            return false;
-        }
-
-        if (!drug.IsSociallyProper(pawn))
-        {
-            return false;
-        }
-
-        return true;
+        return pawn.CanReserve(drug) && drug.IsSociallyProper(pawn);
     }
 
     private static bool ImmuneNow(Pawn pawn, HediffDef chkhdef)
@@ -249,11 +234,6 @@ public class MSDrugUtility
         var health = pawn.health;
         var hediffSet = health?.hediffSet;
         var chk = hediffSet?.GetFirstHediffOfDef(chkhdef);
-        if (chk != null && chk.FullyImmune())
-        {
-            return true;
-        }
-
-        return false;
+        return chk != null && chk.FullyImmune();
     }
 }

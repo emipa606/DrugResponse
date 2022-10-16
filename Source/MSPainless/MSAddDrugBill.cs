@@ -134,7 +134,7 @@ public class MSAddDrugBill
             return false;
         }
 
-        var bill_Medical = new Bill_Medical(recipe);
+        var bill_Medical = new Bill_Medical(recipe, null);
         patient.BillStack.AddBill(bill_Medical);
         bill_Medical.Part = part;
         if (recipe.conceptLearned != null)

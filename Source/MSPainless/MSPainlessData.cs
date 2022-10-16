@@ -324,12 +324,7 @@ public class MSPainlessData : ThingComp
             }
         }
 
-        if (b && pawn.health.summaryHealth.SummaryHealthPercent >= 0.75f)
-        {
-            return true;
-        }
-
-        return false;
+        return b && pawn.health.summaryHealth.SummaryHealthPercent >= 0.75f;
     }
 
     public static bool IsPainManager(Pawn pawn)
@@ -340,12 +335,7 @@ public class MSPainlessData : ThingComp
     public static int GetLastPainReliefTick(Pawn pawn)
     {
         ThingComp PComp = pawn?.TryGetComp<MSPainlessData>();
-        if (PComp != null)
-        {
-            return ((MSPainlessData)PComp).LastPainReliefTick;
-        }
-
-        return 0;
+        return ((MSPainlessData)PComp)?.LastPainReliefTick ?? 0;
     }
 
     public static void MSPainlessDataTickSet(Pawn pawn)
@@ -423,12 +413,7 @@ public class MSPainlessData : ThingComp
         var segments = Response.Split(divider);
         try
         {
-            if (segments.Length > 2)
-            {
-                return int.Parse(segments[2]);
-            }
-
-            return 0;
+            return segments.Length > 2 ? int.Parse(segments[2]) : 0;
         }
         catch (FormatException)
         {

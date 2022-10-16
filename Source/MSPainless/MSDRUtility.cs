@@ -315,12 +315,7 @@ public class MSDRUtility
         var segments = value.Split(divider);
         try
         {
-            if (segments.Length > 4)
-            {
-                return int.Parse(segments[4]);
-            }
-
-            return 1;
+            return segments.Length > 4 ? int.Parse(segments[4]) : 1;
         }
         catch (FormatException)
         {

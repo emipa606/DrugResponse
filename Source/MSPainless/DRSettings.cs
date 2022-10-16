@@ -79,169 +79,32 @@ public class DRSettings : WorldComponent
 
     public static ThingDef MSDrugExtremeDef => GetCachedValue(MSDrugExtreme, 4);
 
-    public static string MSDrugMinorLabel
-    {
-        get
-        {
-            if (MSDrugMinorDef == null)
-            {
-                return "None";
-            }
+    public static string MSDrugMinorLabel => MSDrugMinorDef == null ? "None" : MSDrugMinorDef?.label.CapitalizeFirst();
 
-            var msdrugMinorDef = MSDrugMinorDef;
-            return msdrugMinorDef?.label.CapitalizeFirst();
-        }
-    }
+    public static string MSDrugSeriousLabel =>
+        MSDrugSeriousDef == null ? "None" : MSDrugSeriousDef?.label.CapitalizeFirst();
 
-    public static string MSDrugSeriousLabel
-    {
-        get
-        {
-            if (MSDrugSeriousDef == null)
-            {
-                return "None";
-            }
+    public static string MSDrugIntenseLabel =>
+        MSDrugIntenseDef == null ? "None" : MSDrugIntenseDef?.label.CapitalizeFirst();
 
-            var msdrugSeriousDef = MSDrugSeriousDef;
-            return msdrugSeriousDef?.label.CapitalizeFirst();
-        }
-    }
+    public static string MSDrugExtremeLabel =>
+        MSDrugExtremeDef == null ? "None" : MSDrugExtremeDef?.label.CapitalizeFirst();
 
-    public static string MSDrugIntenseLabel
-    {
-        get
-        {
-            if (MSDrugIntenseDef == null)
-            {
-                return "None";
-            }
+    public static string MSDRHedLabel => MSDRHedDef == null ? "None" : MSDRHedDef?.label.CapitalizeFirst();
 
-            var msdrugIntenseDef = MSDrugIntenseDef;
-            return msdrugIntenseDef?.label.CapitalizeFirst();
-        }
-    }
+    public static string MSDRHedLabel2 => MSDRHedDef2 == null ? "None" : MSDRHedDef2?.label.CapitalizeFirst();
 
-    public static string MSDrugExtremeLabel
-    {
-        get
-        {
-            if (MSDrugExtremeDef == null)
-            {
-                return "None";
-            }
+    public static HediffDef MSDRHedDef => MSDRHed == null ? null : GetDRHedDef(MSDRHed);
 
-            var msdrugExtremeDef = MSDrugExtremeDef;
-            return msdrugExtremeDef?.label.CapitalizeFirst();
-        }
-    }
+    public static HediffDef MSDRHedDef2 => MSDRHed2 == null ? null : GetDRHedDef(MSDRHed2);
 
-    public static string MSDRHedLabel
-    {
-        get
-        {
-            if (MSDRHedDef == null)
-            {
-                return "None";
-            }
+    public static string MSDRThgLabel => MSDRThgDef == null ? "None" : MSDRThgDef?.label.CapitalizeFirst();
 
-            var msdrhedDef = MSDRHedDef;
-            return msdrhedDef?.label.CapitalizeFirst();
-        }
-    }
+    public static string MSDRThgLabel2 => MSDRThgDef2 == null ? "None" : MSDRThgDef2?.label.CapitalizeFirst();
 
-    public static string MSDRHedLabel2
-    {
-        get
-        {
-            if (MSDRHedDef2 == null)
-            {
-                return "None";
-            }
+    public static ThingDef MSDRThgDef => MSDRThg == null ? null : GetDRThgDef(MSDRThg);
 
-            var msdrhedDef = MSDRHedDef2;
-            return msdrhedDef?.label.CapitalizeFirst();
-        }
-    }
-
-    public static HediffDef MSDRHedDef
-    {
-        get
-        {
-            if (MSDRHed == null)
-            {
-                return null;
-            }
-
-            return GetDRHedDef(MSDRHed);
-        }
-    }
-
-    public static HediffDef MSDRHedDef2
-    {
-        get
-        {
-            if (MSDRHed2 == null)
-            {
-                return null;
-            }
-
-            return GetDRHedDef(MSDRHed2);
-        }
-    }
-
-    public static string MSDRThgLabel
-    {
-        get
-        {
-            if (MSDRThgDef == null)
-            {
-                return "None";
-            }
-
-            var msdrthgDef = MSDRThgDef;
-            return msdrthgDef?.label.CapitalizeFirst();
-        }
-    }
-
-    public static string MSDRThgLabel2
-    {
-        get
-        {
-            if (MSDRThgDef2 == null)
-            {
-                return "None";
-            }
-
-            var msdrthgDef = MSDRThgDef2;
-            return msdrthgDef?.label.CapitalizeFirst();
-        }
-    }
-
-    public static ThingDef MSDRThgDef
-    {
-        get
-        {
-            if (MSDRThg == null)
-            {
-                return null;
-            }
-
-            return GetDRThgDef(MSDRThg);
-        }
-    }
-
-    public static ThingDef MSDRThgDef2
-    {
-        get
-        {
-            if (MSDRThg2 == null)
-            {
-                return null;
-            }
-
-            return GetDRThgDef(MSDRThg2);
-        }
-    }
+    public static ThingDef MSDRThgDef2 => MSDRThg2 == null ? null : GetDRThgDef(MSDRThg2);
 
     public static void SetCachedValue(string defName, int type)
     {
