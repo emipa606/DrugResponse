@@ -1,11 +1,10 @@
-using System;
 using System.Collections.Generic;
 using RimWorld.Planet;
 using Verse;
 
 namespace MSPainless;
 
-public class DRSettings : WorldComponent
+public class DRSettings(World world) : WorldComponent(world)
 {
     public static bool DoIfPrisoner;
 
@@ -63,13 +62,9 @@ public class DRSettings : WorldComponent
 
     public static string MSDRThg2;
 
-    public static List<string> MSDRValues = new List<string>();
+    public static List<string> MSDRValues = [];
 
-    public static List<string> MSDRValues2 = new List<string>();
-
-    public DRSettings(World world) : base(world)
-    {
-    }
+    public static List<string> MSDRValues2 = [];
 
     public static ThingDef MSDrugMinorDef => GetCachedValue(MSDrugMinor, 1);
 
@@ -221,10 +216,10 @@ public class DRSettings : WorldComponent
         Scribe_Values.Look(ref MSDrugExtreme, "MSDrugExtreme");
         Scribe_Values.Look(ref MSDRHed, "msdrHed");
         Scribe_Values.Look(ref MSDRThg, "MSDRThg");
-        Scribe_Collections.Look(ref MSDRValues, "MSDRValues", LookMode.Value, Array.Empty<object>());
+        Scribe_Collections.Look(ref MSDRValues, "MSDRValues", LookMode.Value, []);
         Scribe_Values.Look(ref MSDRHed2, "MSDRHed2");
         Scribe_Values.Look(ref MSDRThg2, "MSDRThg2");
-        Scribe_Collections.Look(ref MSDRValues2, "MSDRValues2", LookMode.Value, Array.Empty<object>());
+        Scribe_Collections.Look(ref MSDRValues2, "MSDRValues2", LookMode.Value, []);
         if (Scribe.mode == LoadSaveMode.Saving)
         {
             return;
@@ -232,12 +227,12 @@ public class DRSettings : WorldComponent
 
         if (MSDRValues == null)
         {
-            MSDRValues = new List<string>();
+            MSDRValues = [];
         }
 
         if (MSDRValues2 == null)
         {
-            MSDRValues2 = new List<string>();
+            MSDRValues2 = [];
         }
     }
 

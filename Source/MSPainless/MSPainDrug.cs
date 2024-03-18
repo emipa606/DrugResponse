@@ -60,7 +60,7 @@ internal class MSPainDrug : DefModExtension
 
             foreach (var ODoer in list2)
             {
-                if (!(ODoer is IngestionOutcomeDoer_GiveHediff ingestionOutcomeDoerGiveHediff))
+                if (ODoer is not IngestionOutcomeDoer_GiveHediff ingestionOutcomeDoerGiveHediff)
                 {
                     continue;
                 }

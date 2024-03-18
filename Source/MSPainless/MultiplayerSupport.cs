@@ -46,12 +46,12 @@ internal static class MultiplayerSupport
         MP.RegisterSyncMethod(typeof(MainTabWindow_DrugResponse), "SetUseRB");
         MP.RegisterSyncMethod(typeof(MainTabWindow_DrugResponse), "SetUseDB");
         MP.RegisterSyncWorker(new SyncWorkerDelegate<DRSettings>(SyncWriterForDRSettings));
-        DRSettingsFields = new[]
-        {
+        DRSettingsFields =
+        [
             MP.RegisterSyncField(typeof(DRSettings), "DRWaitPeriod").SetBufferChanges(),
             MP.RegisterSyncField(typeof(DRSettings), "DRWaitPeriod2").SetBufferChanges(),
             MP.RegisterSyncField(typeof(DRSettings), "PainReliefWaitPeriod").SetBufferChanges()
-        };
+        ];
         harmony.Patch(AccessTools.Method(typeof(MainTabWindow_DrugResponse), "DoWindowContents"),
             new HarmonyMethod(typeof(MultiplayerSupport), "WatchBegin"),
             new HarmonyMethod(typeof(MultiplayerSupport), "WatchEnd"));

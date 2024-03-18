@@ -7,7 +7,7 @@ namespace MSPainless;
 
 public class MSAddDrugBill
 {
-    private static readonly List<ThingDef> tmpMedicineBestToWorst = new List<ThingDef>();
+    private static readonly List<ThingDef> tmpMedicineBestToWorst = [];
 
     public static bool GenDrugResponse(bool isDR, Pawn pawn, HediffDef hdef, ThingDef drugDef = null,
         BodyPartRecord part = null, List<string> Master = null, int num = 1)

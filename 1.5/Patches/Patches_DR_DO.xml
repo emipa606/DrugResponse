@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- ====== Compatability Patch ==================== -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Diseases Overhauled</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ThingDef[defName="Mortracain"]</xpath>
+      <value>
+        <li Class="MSPainless.MSPainDrug">
+          <ManagesPain>true</ManagesPain>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

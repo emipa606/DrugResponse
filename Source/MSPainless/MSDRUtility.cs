@@ -177,7 +177,7 @@ public class MSDRUtility
     public static void SetDRValues(string m, string d, int t, bool b, int numof, List<string> master,
         out List<string> newMaster)
     {
-        newMaster = new List<string>();
+        newMaster = [];
         var newValue = ConvertToDRValue(t, m, d, b, numof);
         if (master == null)
         {
@@ -291,7 +291,7 @@ public class MSDRUtility
 
     public static void ClearDRValues(string m, bool doAll, List<string> master, out List<string> newMaster)
     {
-        newMaster = new List<string>();
+        newMaster = [];
         if (doAll || master is not { Count: > 0 })
         {
             return;

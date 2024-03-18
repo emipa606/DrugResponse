@@ -11,7 +11,7 @@ namespace MSPainless;
 
 public class MSPainlessData : ThingComp
 {
-    private List<string> DRResponse = new List<string>();
+    private List<string> DRResponse = [];
 
     private int LastPainReliefTick;
 
@@ -21,10 +21,10 @@ public class MSPainlessData : ThingComp
     {
         base.PostExposeData();
         Scribe_Values.Look(ref LastPainReliefTick, "LastPainReliefTick");
-        Scribe_Collections.Look(ref DRResponse, "DRResponse", LookMode.Value, Array.Empty<object>());
+        Scribe_Collections.Look(ref DRResponse, "DRResponse", LookMode.Value, []);
         if (Scribe.mode != LoadSaveMode.Saving && DRResponse == null)
         {
-            DRResponse = new List<string>();
+            DRResponse = [];
         }
     }
 
@@ -93,7 +93,7 @@ public class MSPainlessData : ThingComp
 
                 for (var i = 1; i <= 2; i++)
                 {
-                    if (!CheckIfResponse(Pawn, hediff.def.defName, DRResponse, i, out var drugdef) ||
+                    if (!CheckIfResponse(hediff.def.defName, DRResponse, i, out var drugdef) ||
                         !MSDrugUtility.IsOKtoAdmin(Pawn, hediff.def, drugdef) ||
                         MSDrugUtility.IsViolation(Pawn, drugdef))
                     {
@@ -117,7 +117,7 @@ public class MSPainlessData : ThingComp
                             continue;
                         }
 
-                        SetDRResponseData(Pawn, hediff.def.defName, drugdef.defName, Find.TickManager.TicksGame,
+                        SetDRResponseData(hediff.def.defName, Find.TickManager.TicksGame,
                             DRResponse, i, out var newDRResponse);
                         DRResponse = newDRResponse;
                         DoDRResponseMsg(Pawn, hediff.def, drugdef);
@@ -144,7 +144,7 @@ public class MSPainlessData : ThingComp
                             Pawn.jobs.ClearQueuedJobs();
                         }
 
-                        SetDRResponseData(Pawn, hediff.def.defName, drugdef.defName, Find.TickManager.TicksGame,
+                        SetDRResponseData(hediff.def.defName, Find.TickManager.TicksGame,
                             DRResponse, i, out var newDRResponse2);
                         DRResponse = newDRResponse2;
                         DoDRResponseMsg(Pawn, hediff.def, drugdef);
@@ -194,7 +194,7 @@ public class MSPainlessData : ThingComp
 
             for (var j = 1; j <= 2; j++)
             {
-                if (!CheckIfResponse(Pawn, hediff2.def.defName, DRResponse, j, out var drugdef2) ||
+                if (!CheckIfResponse(hediff2.def.defName, DRResponse, j, out var drugdef2) ||
                     !MSDrugUtility.IsOKtoAdmin(Pawn, hediff2.def, drugdef2) ||
                     MSDrugUtility.IsViolation(Pawn, drugdef2))
                 {
@@ -207,7 +207,7 @@ public class MSPainlessData : ThingComp
                     continue;
                 }
 
-                SetDRResponseData(Pawn, hediff2.def.defName, drugdef2.defName, Find.TickManager.TicksGame,
+                SetDRResponseData(hediff2.def.defName, Find.TickManager.TicksGame,
                     DRResponse, j, out var newDRResponse3);
                 DRResponse = newDRResponse3;
                 MSCaravanUtility.PawnOnCaravanTakeDrug(car, Pawn, drug2, owner);
@@ -232,7 +232,7 @@ public class MSPainlessData : ThingComp
         }
     }
 
-    private static bool CheckIfResponse(Pawn pawn, string hdefname, List<string> ResponseList, int num,
+    private static bool CheckIfResponse(string hdefname, List<string> ResponseList, int num,
         out ThingDef drugdef)
     {
         var result = false;
@@ -251,7 +251,7 @@ public class MSPainlessData : ThingComp
                 ticksDR = MSDRUtility.GetValueDRTime(hdefname, DRSettings.MSDRValues2, num) * 2500;
             }
 
-            var lasttick = GetDRResponseLastTick(pawn, hdefname, ResponseList, num);
+            var lasttick = GetDRResponseLastTick(hdefname, ResponseList, num);
             if (lasttick > 0)
             {
                 if (lasttick + ticksDR < Find.TickManager.TicksGame)
@@ -347,7 +347,7 @@ public class MSPainlessData : ThingComp
         }
     }
 
-    private static int GetDRResponseLastTick(Pawn pawn, string m, List<string> responseList, int num)
+    private static int GetDRResponseLastTick(string m, List<string> responseList, int num)
     {
         if (responseList is not { Count: > 0 })
         {
@@ -367,10 +367,10 @@ public class MSPainlessData : ThingComp
         return 0;
     }
 
-    private static void SetDRResponseData(Pawn pawn, string m, string d, int last, List<string> master, int num,
+    private static void SetDRResponseData(string m, int last, List<string> master, int num,
         out List<string> newMaster)
     {
-        newMaster = new List<string>();
+        newMaster = [];
         var newValue = ConvertToDRRData(m, last, num);
         if (master == null)
         {

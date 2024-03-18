@@ -942,12 +942,9 @@ public class MainTabWindow_DrugResponse : MainTabWindow
             texturePath = $"{texturePath}/{def.defName}_a";
         }
 
-        if (ContentFinder<Texture2D>.Get(texturePath, false))
-        {
-            return ContentFinder<Texture2D>.Get(texturePath, false);
-        }
-
-        return NullIcon;
+        return ContentFinder<Texture2D>.Get(texturePath, false)
+            ? ContentFinder<Texture2D>.Get(texturePath, false)
+            : NullIcon;
     }
 
     private static Rect GetMSPainlessDrugRect(float height, float width, float posX, float posY)

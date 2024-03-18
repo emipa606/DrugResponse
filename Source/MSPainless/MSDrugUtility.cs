@@ -136,7 +136,7 @@ public class MSDrugUtility
 
         foreach (var OD in ODs)
         {
-            if (!(OD is IngestionOutcomeDoer_GiveHediff ingestionOutcomeDoerGiveHediff))
+            if (OD is not IngestionOutcomeDoer_GiveHediff ingestionOutcomeDoerGiveHediff)
             {
                 continue;
             }
