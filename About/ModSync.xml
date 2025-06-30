@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>270c2a3d-7edf-46b5-90ce-4a1f119b2c24</ID>
   <ModName>Drug Response (Continued)</ModName>
-  <Version>1.5.0</Version>
+  <Version>1.6.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>
@@ -12,3 +12,4 @@
     <Branch>master</Branch>
   </Host>
 </ModSyncNinjaData>
+

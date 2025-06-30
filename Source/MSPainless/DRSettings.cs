@@ -133,34 +133,22 @@ public class DRSettings(World world) : WorldComponent(world)
         switch (type)
         {
             case 1:
-                if (cachedMinorDef == null)
-                {
-                    cachedMinorDef = DefDatabase<ThingDef>.GetNamed(defName, false);
-                }
+                cachedMinorDef ??= DefDatabase<ThingDef>.GetNamed(defName, false);
 
                 returnCache = cachedMinorDef;
                 break;
             case 2:
-                if (cachedSeriousDef == null)
-                {
-                    cachedSeriousDef = DefDatabase<ThingDef>.GetNamed(defName, false);
-                }
+                cachedSeriousDef ??= DefDatabase<ThingDef>.GetNamed(defName, false);
 
                 returnCache = cachedSeriousDef;
                 break;
             case 3:
-                if (cachedIntenseDef == null)
-                {
-                    cachedIntenseDef = DefDatabase<ThingDef>.GetNamed(defName, false);
-                }
+                cachedIntenseDef ??= DefDatabase<ThingDef>.GetNamed(defName, false);
 
                 returnCache = cachedIntenseDef;
                 break;
             case 4:
-                if (cachedExtremeDef == null)
-                {
-                    cachedExtremeDef = DefDatabase<ThingDef>.GetNamed(defName, false);
-                }
+                cachedExtremeDef ??= DefDatabase<ThingDef>.GetNamed(defName, false);
 
                 returnCache = cachedExtremeDef;
                 break;
@@ -216,133 +204,17 @@ public class DRSettings(World world) : WorldComponent(world)
         Scribe_Values.Look(ref MSDrugExtreme, "MSDrugExtreme");
         Scribe_Values.Look(ref MSDRHed, "msdrHed");
         Scribe_Values.Look(ref MSDRThg, "MSDRThg");
-        Scribe_Collections.Look(ref MSDRValues, "MSDRValues", LookMode.Value, []);
+        Scribe_Collections.Look(ref MSDRValues, "MSDRValues", LookMode.Value);
         Scribe_Values.Look(ref MSDRHed2, "MSDRHed2");
         Scribe_Values.Look(ref MSDRThg2, "MSDRThg2");
-        Scribe_Collections.Look(ref MSDRValues2, "MSDRValues2", LookMode.Value, []);
+        Scribe_Collections.Look(ref MSDRValues2, "MSDRValues2", LookMode.Value);
         if (Scribe.mode == LoadSaveMode.Saving)
         {
             return;
         }
 
-        if (MSDRValues == null)
-        {
-            MSDRValues = [];
-        }
+        MSDRValues ??= [];
 
-        if (MSDRValues2 == null)
-        {
-            MSDRValues2 = [];
-        }
-    }
-
-    [StaticConstructorOnStartup]
-    private static class CheckDrugDefinitions
-    {
-        static CheckDrugDefinitions()
-        {
-            CheckPainDrugDefinitions();
-            CheckDRDrugDefinitions1();
-            CheckDRDrugDefinitions2();
-        }
-
-        private static void CheckPainDrugDefinitions()
-        {
-            if (MSDrugMinor != null && DefDatabase<ThingDef>.GetNamed(MSDrugMinor, false) == null)
-            {
-                MSDrugMinor = null;
-            }
-
-            if (MSDrugSerious != null && DefDatabase<ThingDef>.GetNamed(MSDrugSerious, false) == null)
-            {
-                MSDrugSerious = null;
-            }
-
-            if (MSDrugIntense != null && DefDatabase<ThingDef>.GetNamed(MSDrugIntense, false) == null)
-            {
-                MSDrugIntense = null;
-            }
-
-            if (MSDrugExtreme != null && DefDatabase<ThingDef>.GetNamed(MSDrugExtreme, false) == null)
-            {
-                MSDrugExtreme = null;
-            }
-        }
-
-        private static void CheckDRDrugDefinitions1()
-        {
-            var newMSDRValues = new List<string>();
-            if (MSDRValues is { Count: > 0 })
-            {
-                foreach (var value in MSDRValues)
-                {
-                    var mal = MSDRUtility.HValuePart(value);
-                    if (!MSDRUtility.MaladyUsed(mal))
-                    {
-                        continue;
-                    }
-
-                    var end = 1;
-                    if (value.EndsWith("2"))
-                    {
-                        end = 2;
-                    }
-
-                    var drug = MSDRUtility.DValuePart(value);
-                    if (DefDatabase<ThingDef>.GetNamed(drug, false) != null)
-                    {
-                        var t = MSDRUtility.TValuePart(value);
-                        var b = MSDRUtility.BValuePart(value);
-                        var oldValue = MSDRUtility.ConvertToDRValue(t, mal, drug, b, end);
-                        newMSDRValues.AddDistinct(oldValue);
-                    }
-                    else
-                    {
-                        var newValue = MSDRUtility.ConvertToDRValue(24, mal, null, true, end);
-                        newMSDRValues.AddDistinct(newValue);
-                    }
-                }
-            }
-
-            MSDRValues = newMSDRValues;
-        }
-
-        private static void CheckDRDrugDefinitions2()
-        {
-            var newMSDRValues = new List<string>();
-            if (MSDRValues2 is { Count: > 0 })
-            {
-                foreach (var value in MSDRValues2)
-                {
-                    var mal = MSDRUtility.HValuePart(value);
-                    if (!MSDRUtility.MaladyUsed(mal))
-                    {
-                        continue;
-                    }
-
-                    var end = 1;
-                    if (value.EndsWith("2"))
-                    {
-                        end = 2;
-                    }
-
-                    var drug = MSDRUtility.DValuePart(value);
-                    if (DefDatabase<ThingDef>.GetNamed(drug, false) != null)
-                    {
-                        var t = MSDRUtility.TValuePart(value);
-                        var b = MSDRUtility.BValuePart(value);
-                        var oldValue = MSDRUtility.ConvertToDRValue(t, mal, drug, b, end);
-                        newMSDRValues.AddDistinct(oldValue);
-                    }
-                    else
-                    {
-                        var newValue = MSDRUtility.ConvertToDRValue(24, mal, null, true, end);
-                        newMSDRValues.AddDistinct(newValue);
-                    }
-                }
-            }
-
-            MSDRValues2 = newMSDRValues;
-        }
+        MSDRValues2 ??= [];
     }
 }

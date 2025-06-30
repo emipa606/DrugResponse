@@ -8,7 +8,7 @@ namespace MSPainless;
 
 public class MainTabWindow_DrugResponse : MainTabWindow
 {
-    public override Vector2 RequestedTabSize => new Vector2(1100f, 764f);
+    public override Vector2 RequestedTabSize => new(1100f, 764f);
 
     public override void DoWindowContents(Rect canvas)
     {
@@ -29,8 +29,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetUsePR(true); }),
-                new FloatMenuOption(No, delegate { SetUsePR(false); })
+                new(Yes, delegate { SetUsePR(true); }),
+                new(No, delegate { SetUsePR(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list));
         }
@@ -41,8 +41,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list2 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetUseDR(true); }),
-                new FloatMenuOption(No, delegate { SetUseDR(false); })
+                new(Yes, delegate { SetUseDR(true); }),
+                new(No, delegate { SetUseDR(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list2));
         }
@@ -54,8 +54,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list3 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetDoPrisoners(true); }),
-                new FloatMenuOption(No, delegate { SetDoPrisoners(false); })
+                new(Yes, delegate { SetDoPrisoners(true); }),
+                new(No, delegate { SetDoPrisoners(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list3));
         }
@@ -66,8 +66,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list4 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetDoDRPrisoners(true); }),
-                new FloatMenuOption(No, delegate { SetDoDRPrisoners(false); })
+                new(Yes, delegate { SetDoDRPrisoners(true); }),
+                new(No, delegate { SetDoDRPrisoners(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list4));
         }
@@ -79,8 +79,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list5 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetUseNM(true); }),
-                new FloatMenuOption(No, delegate { SetUseNM(false); })
+                new(Yes, delegate { SetUseNM(true); }),
+                new(No, delegate { SetUseNM(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list5));
         }
@@ -91,8 +91,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list6 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetShowR(true); }),
-                new FloatMenuOption(No, delegate { SetShowR(false); })
+                new(Yes, delegate { SetShowR(true); }),
+                new(No, delegate { SetShowR(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list6));
         }
@@ -104,8 +104,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list7 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetShowNPR(true); }),
-                new FloatMenuOption(No, delegate { SetShowNPR(false); })
+                new(Yes, delegate { SetShowNPR(true); }),
+                new(No, delegate { SetShowNPR(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list7));
         }
@@ -116,8 +116,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list8 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetShowNDR(true); }),
-                new FloatMenuOption(No, delegate { SetShowNDR(false); })
+                new(Yes, delegate { SetShowNDR(true); }),
+                new(No, delegate { SetShowNDR(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list8));
         }
@@ -129,8 +129,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list9 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetBillsHPain(true); }),
-                new FloatMenuOption(No, delegate { SetBillsHPain(false); })
+                new(Yes, delegate { SetBillsHPain(true); }),
+                new(No, delegate { SetBillsHPain(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list9));
         }
@@ -141,8 +141,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list10 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetDoIfImm(true); }),
-                new FloatMenuOption(No, delegate { SetDoIfImm(false); })
+                new(Yes, delegate { SetDoIfImm(true); }),
+                new(No, delegate { SetDoIfImm(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list10));
         }
@@ -157,7 +157,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list11 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, SetPainMinorNone)
+                new(None, SetPainMinorNone)
             };
             if (MSPainDrug.PainDrugs().Count > 0)
             {
@@ -174,8 +174,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         }
 
         posX += width + (spacing * painspacefactor);
-        var DrugImage = GetDrugImage(DRSettings.MSDrugMinorDef);
-        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), DrugImage);
+        var drugImage = GetDrugImage(DRSettings.MSDrugMinorDef);
+        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), drugImage);
         posX += lineHeight + (spacing * painspacefactor);
         if (DRSettings.MSDrugMinorDef != null)
         {
@@ -193,7 +193,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list12 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, SetPainSeriousNone)
+                new(None, SetPainSeriousNone)
             };
             if (MSPainDrug.PainDrugs().Count > 0)
             {
@@ -210,8 +210,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         }
 
         posX += width + (spacing * painspacefactor);
-        DrugImage = GetDrugImage(DRSettings.MSDrugSeriousDef);
-        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), DrugImage);
+        drugImage = GetDrugImage(DRSettings.MSDrugSeriousDef);
+        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), drugImage);
         posX += lineHeight + (spacing * painspacefactor);
         if (DRSettings.MSDrugSeriousDef != null)
         {
@@ -229,7 +229,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list13 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, SetPainIntenseNone)
+                new(None, SetPainIntenseNone)
             };
             if (MSPainDrug.PainDrugs().Count > 0)
             {
@@ -246,8 +246,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         }
 
         posX += width + (spacing * painspacefactor);
-        DrugImage = GetDrugImage(DRSettings.MSDrugIntenseDef);
-        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), DrugImage);
+        drugImage = GetDrugImage(DRSettings.MSDrugIntenseDef);
+        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), drugImage);
         posX += lineHeight + (spacing * painspacefactor);
         if (DRSettings.MSDrugIntenseDef != null)
         {
@@ -265,7 +265,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list14 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, SetPainExtremeNone)
+                new(None, SetPainExtremeNone)
             };
             if (MSPainDrug.PainDrugs().Count > 0)
             {
@@ -282,8 +282,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         }
 
         posX += width + (spacing * painspacefactor);
-        DrugImage = GetDrugImage(DRSettings.MSDrugExtremeDef);
-        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), DrugImage);
+        drugImage = GetDrugImage(DRSettings.MSDrugExtremeDef);
+        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), drugImage);
         posX += lineHeight + (spacing * painspacefactor);
         if (DRSettings.MSDrugExtremeDef != null)
         {
@@ -312,8 +312,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list15 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetUseRB(true); }),
-                new FloatMenuOption(No, delegate { SetUseRB(false); })
+                new(Yes, delegate { SetUseRB(true); }),
+                new(No, delegate { SetUseRB(false); })
             };
             Find.WindowStack.Add(new FloatMenu(list15));
         }
@@ -327,7 +327,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list16 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, delegate { SetMaladyNone(null, null, 24, true, 1); })
+                new(None, delegate { SetMaladyNone(null, null, 24, true, 1); })
             };
             if (MSDRUtility.Maladies().Count > 0)
             {
@@ -375,7 +375,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list17 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, delegate { SetMaladyDrugNone(1); })
+                new(None, delegate { SetMaladyDrugNone(1); })
             };
             if (MSDRUtility.MaladyDrugs().Count > 0)
             {
@@ -392,8 +392,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         }
 
         posX += width + spacing - (spacing * (shift * 1.5f));
-        DrugImage = GetDrugImage(DRSettings.MSDRThgDef);
-        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), DrugImage);
+        drugImage = GetDrugImage(DRSettings.MSDRThgDef);
+        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), drugImage);
         posX += lineHeight + spacing;
         if (DRSettings.MSDRThgDef != null)
         {
@@ -407,8 +407,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list18 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, null),
-                new FloatMenuOption("MSPainless.Set".Translate(), delegate
+                new(None, null),
+                new("MSPainless.Set".Translate(), delegate
                 {
                     if (DRSettings.MSDRHed != null)
                     {
@@ -425,9 +425,9 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list19 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, null),
-                new FloatMenuOption("MSPainless.Clear".Translate(), delegate { ClearMaladyOne(1); }),
-                new FloatMenuOption("MSPainless.ClearAll".Translate(), delegate { ClearMaladyAll(1); })
+                new(None, null),
+                new("MSPainless.Clear".Translate(), delegate { ClearMaladyOne(1); }),
+                new("MSPainless.ClearAll".Translate(), delegate { ClearMaladyAll(1); })
             };
             Find.WindowStack.Add(new FloatMenu(list19));
         }
@@ -451,8 +451,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list20 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(Yes, delegate { SetUseDB(true, 1); }),
-                new FloatMenuOption(No, delegate { SetUseDB(false, 1); })
+                new(Yes, delegate { SetUseDB(true, 1); }),
+                new(No, delegate { SetUseDB(false, 1); })
             };
             Find.WindowStack.Add(new FloatMenu(list20));
         }
@@ -465,7 +465,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list21 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, delegate { SetMaladyNone(null, null, 24, true, 2); })
+                new(None, delegate { SetMaladyNone(null, null, 24, true, 2); })
             };
             if (MSDRUtility.Maladies().Count > 0)
             {
@@ -513,7 +513,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list22 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, delegate { SetMaladyDrugNone(2); })
+                new(None, delegate { SetMaladyDrugNone(2); })
             };
             if (MSDRUtility.MaladyDrugs().Count > 0)
             {
@@ -530,8 +530,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         }
 
         posX += width + spacing - (spacing * (shift * 1.5f));
-        DrugImage = GetDrugImage(DRSettings.MSDRThgDef2);
-        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), DrugImage);
+        drugImage = GetDrugImage(DRSettings.MSDRThgDef2);
+        Widgets.ButtonImageFitted(GetMSPainlessDrugRect(lineHeight, lineHeight, posX, posY), drugImage);
         posX += lineHeight + spacing;
         if (DRSettings.MSDRThgDef2 != null)
         {
@@ -545,8 +545,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list23 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, null),
-                new FloatMenuOption("MSPainless.Set".Translate(), delegate
+                new(None, null),
+                new("MSPainless.Set".Translate(), delegate
                 {
                     if (DRSettings.MSDRHed2 != null)
                     {
@@ -563,9 +563,9 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         {
             var list24 = new List<FloatMenuOption>
             {
-                new FloatMenuOption(None, null),
-                new FloatMenuOption("MSPainless.Clear".Translate(), delegate { ClearMaladyOne(2); }),
-                new FloatMenuOption("MSPainless.ClearAll".Translate(), delegate { ClearMaladyAll(2); })
+                new(None, null),
+                new("MSPainless.Clear".Translate(), delegate { ClearMaladyOne(2); }),
+                new("MSPainless.ClearAll".Translate(), delegate { ClearMaladyAll(2); })
             };
             Find.WindowStack.Add(new FloatMenu(list24));
         }
@@ -592,7 +592,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
 
         var list25 = new List<FloatMenuOption>
         {
-            new FloatMenuOption(Yes, delegate { SetUseDB(true, 2); })
+            new(Yes, delegate { SetUseDB(true, 2); })
         };
         Find.WindowStack.Add(new FloatMenu(list25));
     }

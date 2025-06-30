@@ -8,7 +8,7 @@ namespace MSPainless;
 [StaticConstructorOnStartup]
 internal static class MultiplayerSupport
 {
-    private static readonly Harmony harmony = new Harmony("rimworld.pelador.drugresponse.multiplayersupport");
+    private static readonly Harmony harmony = new("rimworld.pelador.drugresponse.multiplayersupport");
 
     private static readonly ISyncField[] DRSettingsFields;
 

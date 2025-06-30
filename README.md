@@ -1,22 +1,20 @@
-# DrugResponse
+# [Drug Response (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2196401201)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
 Update of peladors mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2002963487
 
-- Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2347448943]Medicines+ Thanks Sky!
+- Added support for [Medicines+](https://steamcommunity.com/sharedfiles/filedetails/?id=2347448943) Thanks Sky!
 - Added German translation, thanks Erdnussbrot
 - Made the menu-icon fit in better
-- Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2466826996]Remedies Thanks Arcanant!
-- Added patch for https://steamcommunity.com/sharedfiles/filedetails/?id=2049984501]Medicine Expanded, thanks ThatBartGuy!
-- For detailed description, download the https://github.com/emipa606/DrugResponse/raw/main/Source/DrugResponseNotes.pdf]PDF
+- Added support for [Remedies](https://steamcommunity.com/sharedfiles/filedetails/?id=2466826996) Thanks Arcanant!
+- Added patch for [Medicine Expanded](https://steamcommunity.com/sharedfiles/filedetails/?id=2049984501), thanks ThatBartGuy!
+- For detailed description, download the [PDF](https://github.com/emipa606/DrugResponse/raw/main/Source/DrugResponseNotes.pdf)
 
 ![Image](https://i.imgur.com/pufA0kM.png)
-
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
-
 
 # Overview
  V1.1
@@ -30,14 +28,14 @@ Drug response is a QoL tool that allows you to configure AI tools for your colon
 
 The mod is explained with the following PDF:
 
-https://1drv.ms/b/s!Au3GsmKyQkDYhbcl--GivGHylXLpsg?e=ZqfovQ]Drugs response notes PDF
+[Drugs response notes PDF](https://1drv.ms/b/s!Au3GsmKyQkDYhbcl--GivGHylXLpsg?e=ZqfovQ)
 
 
 Note the features added in this mod are intended to embellish the existing vanilla drug policy process and not replace it, and there is some synergy afforded to the use of drug policies. It is important, therefore, that colonists are assigned with up to date drug policies to be able to make use of the process.
 
 **Where new modded drugs are added part way through a save game please ensure to update your colonists with a new policy, this is to ensure that all the new drugs applied have a valid entry in the currently assigned colonist policies. New games starting with drug mods will be fine and not require an update to the pawn drug policies.**
 
-This problem now solved with the mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2000335507]Drug Policy Fix
+This problem now solved with the mod: [Drug Policy Fix](https://steamcommunity.com/sharedfiles/filedetails/?id=2000335507)
 
 (Hopefully it goes without saying that if a drug isn't accessible to the colonist on their map then a response will not be attempted/triggered.)
 
@@ -103,13 +101,12 @@ NotFood - MP Compatibility Support.
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
+-  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
--  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
+-  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
-
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2196401201]![Image](https://img.shields.io/github/v/release/emipa606/DrugResponse?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
-
+[![Image](https://img.shields.io/github/v/release/emipa606/DrugResponse?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2196401201) | tags:  qol

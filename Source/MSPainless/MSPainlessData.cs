@@ -21,7 +21,7 @@ public class MSPainlessData : ThingComp
     {
         base.PostExposeData();
         Scribe_Values.Look(ref LastPainReliefTick, "LastPainReliefTick");
-        Scribe_Collections.Look(ref DRResponse, "DRResponse", LookMode.Value, []);
+        Scribe_Collections.Look(ref DRResponse, "DRResponse", LookMode.Value);
         if (Scribe.mode != LoadSaveMode.Saving && DRResponse == null)
         {
             DRResponse = [];
