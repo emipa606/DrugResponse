@@ -3,7 +3,13 @@
   "CanAdd": "0",
   "CanRemove": "0",
   "PreviewVersion": "1.6",
-  "LastXmlCleaning": "2025-06-30T22:35:28.7373698+02:00",
+  "LastXmlCleaning": "2025-07-20T20:03:25.5471324+02:00",
   "SocialImageSet": true,
-  "SearchTags": " qol"
+  "SearchTags": " qol",
+  "Patches": true,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 104764,
+  "LinesOfXML": 8590,
+  "CodeBaseSize": 80
 }
