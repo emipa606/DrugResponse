@@ -74,28 +74,28 @@ public class DRSettings(World world) : WorldComponent(world)
 
     public static ThingDef MSDrugExtremeDef => GetCachedValue(MSDrugExtreme, 4);
 
-    public static string MSDrugMinorLabel => MSDrugMinorDef == null ? "None" : MSDrugMinorDef?.label.CapitalizeFirst();
+    public static string MSDrugMinorLabel => MSDrugMinorDef == null ? "None" : MSDrugMinorDef.label.CapitalizeFirst();
 
     public static string MSDrugSeriousLabel =>
-        MSDrugSeriousDef == null ? "None" : MSDrugSeriousDef?.label.CapitalizeFirst();
+        MSDrugSeriousDef == null ? "None" : MSDrugSeriousDef.label.CapitalizeFirst();
 
     public static string MSDrugIntenseLabel =>
-        MSDrugIntenseDef == null ? "None" : MSDrugIntenseDef?.label.CapitalizeFirst();
+        MSDrugIntenseDef == null ? "None" : MSDrugIntenseDef.label.CapitalizeFirst();
 
     public static string MSDrugExtremeLabel =>
-        MSDrugExtremeDef == null ? "None" : MSDrugExtremeDef?.label.CapitalizeFirst();
+        MSDrugExtremeDef == null ? "None" : MSDrugExtremeDef.label.CapitalizeFirst();
 
-    public static string MSDRHedLabel => MSDRHedDef == null ? "None" : MSDRHedDef?.label.CapitalizeFirst();
+    public static string MSDRHedLabel => MSDRHedDef == null ? "None" : MSDRHedDef.label.CapitalizeFirst();
 
-    public static string MSDRHedLabel2 => MSDRHedDef2 == null ? "None" : MSDRHedDef2?.label.CapitalizeFirst();
+    public static string MSDRHedLabel2 => MSDRHedDef2 == null ? "None" : MSDRHedDef2.label.CapitalizeFirst();
 
     public static HediffDef MSDRHedDef => MSDRHed == null ? null : GetDRHedDef(MSDRHed);
 
     public static HediffDef MSDRHedDef2 => MSDRHed2 == null ? null : GetDRHedDef(MSDRHed2);
 
-    public static string MSDRThgLabel => MSDRThgDef == null ? "None" : MSDRThgDef?.label.CapitalizeFirst();
+    public static string MSDRThgLabel => MSDRThgDef == null ? "None" : MSDRThgDef.label.CapitalizeFirst();
 
-    public static string MSDRThgLabel2 => MSDRThgDef2 == null ? "None" : MSDRThgDef2?.label.CapitalizeFirst();
+    public static string MSDRThgLabel2 => MSDRThgDef2 == null ? "None" : MSDRThgDef2.label.CapitalizeFirst();
 
     public static ThingDef MSDRThgDef => MSDRThg == null ? null : GetDRThgDef(MSDRThg);
 

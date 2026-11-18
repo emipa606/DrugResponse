@@ -121,7 +121,7 @@ internal class MSPainDrug : DefModExtension
             var ingestible2 = def.ingestible;
             var drugCategory2 = ingestible2 != null ? new DrugCategory?(ingestible2.drugCategory) : null;
             var drugCategory3 = DrugCategory.Medical;
-            if ((drugCategory2.GetValueOrDefault() == drugCategory3) & (drugCategory2 != null))
+            if (drugCategory2.GetValueOrDefault() == drugCategory3 && drugCategory2 != null)
             {
                 return true;
             }
@@ -148,7 +148,7 @@ internal class MSPainDrug : DefModExtension
             b = recipeMaker?.researchPrerequisite != null;
         }
 
-        if (b && def.recipeMaker.researchPrerequisite.IsFinished)
+        if (b && def != null && def.recipeMaker.researchPrerequisite.IsFinished)
         {
             return true;
         }

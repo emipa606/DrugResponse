@@ -5,7 +5,7 @@ using Verse.AI;
 
 namespace MSPainless;
 
-public class MSDrugUtility
+public static class MSDrugUtility
 {
     public static bool IsValidPawnMod(Pawn pawn, bool painmode)
     {
@@ -64,7 +64,7 @@ public class MSDrugUtility
         {
             if (!DPExists(policy, def))
             {
-                Messages.Message("MSPainless.ErrDrugPolicy".Translate(pawn.LabelShort, def?.label), pawn,
+                Messages.Message("MSPainless.ErrDrugPolicy".Translate(pawn?.LabelShort, def?.label), pawn,
                     MessageTypeDefOf.NeutralEvent, false);
                 return false;
             }

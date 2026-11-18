@@ -3,7 +3,7 @@ using Verse;
 
 namespace MSPainless;
 
-public class MSCaravanUtility
+public static class MSCaravanUtility
 {
     public static bool CaravanHasDrug(Caravan car, ThingDef drugDef, out Thing drug, out Pawn owner)
     {

@@ -6,7 +6,7 @@ using Verse;
 
 namespace MSPainless;
 
-public class MSDRUtility
+public static class MSDRUtility
 {
     public static List<string> MaladyMods()
     {
@@ -151,7 +151,7 @@ public class MSDRUtility
             var ingestible = chkDef.ingestible;
             var drugCategory = ingestible != null ? new DrugCategory?(ingestible.drugCategory) : null;
             var drugCategory2 = DrugCategory.Medical;
-            if (!((drugCategory.GetValueOrDefault() == drugCategory2) & (drugCategory != null)))
+            if (!(drugCategory.GetValueOrDefault() == drugCategory2 && drugCategory != null))
             {
                 continue;
             }
@@ -220,12 +220,9 @@ public class MSDRUtility
             return 1;
         }
 
-        foreach (var value in master)
+        foreach (var value in master.Where(value => HValuePart(value) == m))
         {
-            if (HValuePart(value) == m)
-            {
-                return NumValuePart(value);
-            }
+            return NumValuePart(value);
         }
 
         return 1;
@@ -278,12 +275,9 @@ public class MSDRUtility
             return true;
         }
 
-        foreach (var value in master)
+        foreach (var value in master.Where(value => HValuePart(value) == m))
         {
-            if (HValuePart(value) == m)
-            {
-                return BValuePart(value);
-            }
+            return BValuePart(value);
         }
 
         return true;
@@ -297,12 +291,9 @@ public class MSDRUtility
             return;
         }
 
-        foreach (var value in master)
+        foreach (var value in master.Where(value => HValuePart(value) == m))
         {
-            if (HValuePart(value) != m)
-            {
-                newMaster.AddDistinct(value);
-            }
+            newMaster.AddDistinct(value);
         }
     }
 

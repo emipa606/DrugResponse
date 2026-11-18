@@ -6,7 +6,7 @@ using Verse.AI;
 
 namespace MSPainless;
 
-public class MSPainResponse
+public static class MSPainResponse
 {
     public static void CheckPainResponse(Pawn pawn)
     {
@@ -100,14 +100,11 @@ public class MSPainResponse
             return null;
         }
 
-        if (DRSettings.ShowReliefMsg)
+        if (DRSettings.ShowReliefMsg && pawn != null)
         {
-            if (pawn != null)
-            {
-                Messages.Message(
-                    "MSPainless.ReliefMsg".Translate(pawn.LabelShort.CapitalizeFirst(),
-                        drug.def.label.CapitalizeFirst()), pawn, MessageTypeDefOf.NeutralEvent, false);
-            }
+            Messages.Message(
+                "MSPainless.ReliefMsg".Translate(pawn.LabelShort.CapitalizeFirst(),
+                    drug.def.label.CapitalizeFirst()), pawn, MessageTypeDefOf.NeutralEvent, false);
         }
 
         var job = new Job(JobDefOf.Ingest, drug)

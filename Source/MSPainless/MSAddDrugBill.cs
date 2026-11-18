@@ -5,7 +5,7 @@ using Verse;
 
 namespace MSPainless;
 
-public class MSAddDrugBill
+public static class MSAddDrugBill
 {
     private static readonly List<ThingDef> tmpMedicineBestToWorst = [];
 
@@ -111,7 +111,12 @@ public class MSAddDrugBill
             b = billStack?.Bills != null;
         }
 
-        if (!b || pawn.BillStack.Bills.Count <= 0)
+        if (pawn != null && (!b || pawn.BillStack.Bills.Count <= 0))
+        {
+            return false;
+        }
+
+        if (pawn == null)
         {
             return false;
         }
@@ -209,12 +214,9 @@ public class MSAddDrugBill
         foreach (var ingredient in recipe.ingredients)
         {
             ThingDef thingDef2 = null;
-            foreach (var medicine in tmpMedicineBestToWorst)
+            foreach (var medicine in tmpMedicineBestToWorst.Where(m => ingredient.filter.Allows(m)))
             {
-                if (ingredient.filter.Allows(medicine))
-                {
-                    thingDef2 = medicine;
-                }
+                thingDef2 = medicine;
             }
 
             if (thingDef2 != null && (thingDef == null || thingDef2.GetStatValueAbstract(StatDefOf.MedicalPotency) >

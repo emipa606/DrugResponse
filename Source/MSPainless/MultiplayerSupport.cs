@@ -53,8 +53,8 @@ internal static class MultiplayerSupport
             MP.RegisterSyncField(typeof(DRSettings), "PainReliefWaitPeriod").SetBufferChanges()
         ];
         harmony.Patch(AccessTools.Method(typeof(MainTabWindow_DrugResponse), "DoWindowContents"),
-            new HarmonyMethod(typeof(MultiplayerSupport), "WatchBegin"),
-            new HarmonyMethod(typeof(MultiplayerSupport), "WatchEnd"));
+            new HarmonyMethod(typeof(MultiplayerSupport), nameof(WatchBegin)),
+            new HarmonyMethod(typeof(MultiplayerSupport), nameof(WatchEnd)));
     }
 
     private static void SyncWriterForDRSettings(SyncWorker sync, ref DRSettings dRSettings)
@@ -96,8 +96,8 @@ internal static class MultiplayerSupport
 
     private static void FixRNG(MethodInfo method)
     {
-        harmony.Patch(method, new HarmonyMethod(typeof(MultiplayerSupport), "FixRNGPre"),
-            new HarmonyMethod(typeof(MultiplayerSupport), "FixRNGPos"));
+        harmony.Patch(method, new HarmonyMethod(typeof(MultiplayerSupport), nameof(FixRNGPre)),
+            new HarmonyMethod(typeof(MultiplayerSupport), nameof(FixRNGPos)));
     }
 
     private static void FixRNGPre()

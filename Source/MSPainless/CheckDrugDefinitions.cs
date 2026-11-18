@@ -50,7 +50,7 @@ public static class CheckDrugDefinitions
                 }
 
                 var end = 1;
-                if (value.EndsWith("2"))
+                if (value.EndsWith('2'))
                 {
                     end = 2;
                 }
@@ -88,7 +88,7 @@ public static class CheckDrugDefinitions
                 }
 
                 var end = 1;
-                if (value.EndsWith("2"))
+                if (value.EndsWith('2'))
                 {
                     end = 2;
                 }

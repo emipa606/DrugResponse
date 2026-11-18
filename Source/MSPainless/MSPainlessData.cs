@@ -86,7 +86,8 @@ public class MSPainlessData : ThingComp
             while (enumerator.MoveNext())
             {
                 var hediff = enumerator.Current;
-                if (!hediff.Visible || IsProsthetic(hediff) || !MSDRUtility.MaladyUsed(hediff.def.defName))
+                if (hediff is not { Visible: true } || IsProsthetic(hediff) ||
+                    !MSDRUtility.MaladyUsed(hediff.def.defName))
                 {
                     continue;
                 }
@@ -148,12 +149,12 @@ public class MSPainlessData : ThingComp
                             DRResponse, i, out var newDRResponse2);
                         DRResponse = newDRResponse2;
                         DoDRResponseMsg(Pawn, hediff.def, drugdef);
-                        Pawn.jobs.TryTakeOrderedJob(job);
+                        Pawn.jobs?.TryTakeOrderedJob(job);
                     }
                 }
 
                 var jobs = Pawn.jobs;
-                if (jobs?.curJob != null && Pawn.jobs.curJob.def == JobDefOf.Ingest)
+                if (jobs?.curJob != null && Pawn.jobs?.curJob.def == JobDefOf.Ingest)
                 {
                     break;
                 }

@@ -10,7 +10,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
 {
     public override Vector2 RequestedTabSize => new(1100f, 764f);
 
-    public override void DoWindowContents(Rect canvas)
+    public override void DoWindowContents(Rect inRect)
     {
         SetInitialSizeAndPosition();
         string Yes = "MSPainless.Yes".Translate();
@@ -18,8 +18,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
         var lineHeight = 30f;
         var spacing = 6f;
         var sectionspacing = 35f;
-        canvas.height += (lineHeight * 4f) + 25f;
-        var width = (canvas.width / 2f) - 50f;
+        inRect.height += (lineHeight * 4f) + 25f;
+        var width = (inRect.width / 2f) - 50f;
         var textwidth = 120f;
         var posX = 0f;
         var posY = 6f;
@@ -165,8 +165,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
                 while (enumerator.MoveNext())
                 {
                     var Drug = enumerator.Current;
-                    list11.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
-                        delegate { SetPainMinor(Drug.defName); }));
+                    list11.Add(new FloatMenuOption(Drug?.label.CapitalizeFirst(),
+                        delegate { SetPainMinor(Drug?.defName); }));
                 }
             }
 
@@ -201,8 +201,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
                 while (enumerator.MoveNext())
                 {
                     var Drug = enumerator.Current;
-                    list12.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
-                        delegate { SetPainSerious(Drug.defName); }));
+                    list12.Add(new FloatMenuOption(Drug?.label.CapitalizeFirst(),
+                        delegate { SetPainSerious(Drug?.defName); }));
                 }
             }
 
@@ -237,8 +237,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
                 while (enumerator.MoveNext())
                 {
                     var Drug = enumerator.Current;
-                    list13.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
-                        delegate { SetPainIntense(Drug.defName); }));
+                    list13.Add(new FloatMenuOption(Drug?.label.CapitalizeFirst(),
+                        delegate { SetPainIntense(Drug?.defName); }));
                 }
             }
 
@@ -273,8 +273,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
                 while (enumerator.MoveNext())
                 {
                     var Drug = enumerator.Current;
-                    list14.Add(new FloatMenuOption(Drug.label.CapitalizeFirst(),
-                        delegate { SetPainExtreme(Drug.defName); }));
+                    list14.Add(new FloatMenuOption(Drug?.label.CapitalizeFirst(),
+                        delegate { SetPainExtreme(Drug?.defName); }));
                 }
             }
 
@@ -342,7 +342,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
                     var segments = text.Split(divider);
                     var mod = segments[0];
                     var malady = segments[1];
-                    var maladylabel = hedlist.Find(hd => hd.defName == malady).label.CapitalizeFirst();
+                    var maladylabel = hedlist.Find(hd => hd.defName == malady)?.label.CapitalizeFirst();
                     descList.AddDistinct($"{maladylabel} ({mod});{malady}");
                 }
 
@@ -383,8 +383,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
                 while (enumerator.MoveNext())
                 {
                     var drug = enumerator.Current;
-                    list17.Add(new FloatMenuOption(drug.label.CapitalizeFirst(),
-                        delegate { SetMaladyDrug(drug.defName, 1); }));
+                    list17.Add(new FloatMenuOption(drug?.label.CapitalizeFirst(),
+                        delegate { SetMaladyDrug(drug?.defName, 1); }));
                 }
             }
 
@@ -480,7 +480,7 @@ public class MainTabWindow_DrugResponse : MainTabWindow
                     var segments2 = text3.Split(divider2);
                     var mod2 = segments2[0];
                     var malady = segments2[1];
-                    var maladylabel2 = hedlist2.Find(hd => hd.defName == malady).label.CapitalizeFirst();
+                    var maladylabel2 = hedlist2.Find(hd => hd.defName == malady)?.label.CapitalizeFirst();
                     descList2.AddDistinct($"{maladylabel2} ({mod2});{malady}");
                 }
 
@@ -521,8 +521,8 @@ public class MainTabWindow_DrugResponse : MainTabWindow
                 while (enumerator.MoveNext())
                 {
                     var drug = enumerator.Current;
-                    list22.Add(new FloatMenuOption(drug.label.CapitalizeFirst(),
-                        delegate { SetMaladyDrug(drug.defName, 2); }));
+                    list22.Add(new FloatMenuOption(drug?.label.CapitalizeFirst(),
+                        delegate { SetMaladyDrug(drug?.defName, 2); }));
                 }
             }
 

@@ -3,4 +3,30 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="MSPainless/MSPainless.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/DRLanguage.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/Defs/">
+    <File Path="../Defs/Defs_DR_Tab.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Patches/">
+    <File Path="../1.7/Patches/Patches_DR_AY.xml" />
+    <File Path="../1.7/Patches/Patches_DR_DO.xml" />
+    <File Path="../1.7/Patches/Patches_DR_DrugsPlus.xml" />
+    <File Path="../1.7/Patches/Patches_DR_MedicinePlus.xml" />
+    <File Path="../1.7/Patches/Patches_DR_MS.xml" />
+    <File Path="../1.7/Patches/Patches_DR_RC2.xml" />
+    <File Path="../1.7/Patches/Patches_DR_SS.xml" />
+    <File Path="../1.7/Patches/Patches_DR_Vanilla.xml" />
+    <File Path="../1.7/Patches/Patches_DR_VG.xml" />
+    <File Path="../1.7/Patches/Patches_MedicineExpanded.xml" />
+    <File Path="../1.7/Patches/Patches_Remedies.xml" />
+    <File Path="../1.7/Patches/Patches_SI_Reborn.xml" />
+  </Folder>
 </Solution>
